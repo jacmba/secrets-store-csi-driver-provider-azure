@@ -244,7 +244,7 @@ Here is a sample [deployment yaml](https://github.com/kubernetes-sigs/secrets-st
 
 ### [OPTIONAL] Enable Auto Rotation of Secrets
 
-You can setup the Secrets Store CSI Driver to periodically update the pod mount and Kubernetes Secret with the latest content from external secrets-store. Refer to [doc]([docs/README.rotation.md](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/master/docs/README.rotation.md)) for steps on enabling auto rotation.
+You can setup the Secrets Store CSI Driver to periodically update the pod mount and Kubernetes Secret with the latest content from external secrets-store. Refer to [doc](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/master/docs/README.rotation.md) for steps on enabling auto rotation.
 
 **NOTE** The CSI driver **does not restart** the application pods. It only handles updating the pod mount and Kubernetes secret similar to how Kubernetes handles updates to Kubernetes secret mounted as volumes.
 
@@ -294,3 +294,7 @@ Azure Key Vault Provider for Secrets Store CSI Driver is an open source project 
 This demo created by <a href="https://twitter.com/HoussemDellai">Houssem Dellai</a> is using AAD Pod Identity and Secret Store CSI provider for Key Vault to retrieve database login and password from Azure Key Vault. <a href="https://www.youtube.com/watch?v=dAFWrbeA6vQ&list=PLpbcUe4chE79sB7Jg7B4z3HytqUUEwcNE&index=24">Watch it here.</a>
 
 <a href="https://www.youtube.com/watch?v=dAFWrbeA6vQ&list=PLpbcUe4chE79sB7Jg7B4z3HytqUUEwcNE&index=24"><img src="https://github.com/Azure/secrets-store-csi-driver-provider-azure/blob/master/images/demo-video-thumb.png?raw=true" width="60%"/></a>
+
+This demo created by <a href="https://twitter.com/NileshGule">Nilesh Gule</a> is using VMSS Managed Identity and Secret Store CSI provider for Key Vault to retrieve RabbitMQ related secret from Azure Key Vault. These secrets are synced with Kubernetes Secret object and then injected into deployment as ENV variables. <a href="https://youtu.be/MHm4IVGVO1w">Integrate Azure Key Vault (AKV) with Azure Kubernetes Service (AKS) in 5 easy steps</a>
+
+<a href="https://youtu.be/MHm4IVGVO1w"><img src="/images/demo-akv-aks-integration.PNG" width="60%"/></a>
