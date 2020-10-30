@@ -7,7 +7,7 @@ metadata:
 {{ include "sscdpa.labels" . | indent 2 }}
 spec:
   updateStrategy:
-    type: RollingUpdate
+{{ toYaml .Values.linux.updateStrategy | indent 4 }}
   selector:
     matchLabels:
       app: {{ template "sscdpa.name" . }}
@@ -39,9 +39,7 @@ spec:
               mountPath: /provider
             - name: mountpoint-dir
               mountPath: /var/lib/kubelet/pods
-              mountPropagation: Bidirectional
-          securityContext:
-            privileged: true
+              mountPropagation: HostToContainer
       {{- if .Values.linux.priorityClassName }}
       priorityClassName: {{ .Values.linux.priorityClassName | quote }}
       {{- end }}
